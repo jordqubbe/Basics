@@ -1,0 +1,29 @@
+name: Basics
+version: '${project.version}'
+main: dev.jordgubbe.basics.Basics
+api-version: 1.18
+authors: [ jordgubbe ]
+description: A worse version of essentials
+# Commands
+commands:
+  clearlag:
+    description: Deletes floating items on the ground that cause lag
+    usage: /clearlag
+    aliases: cl
+  material:
+    description: An easier to use version of the vanilla /give command
+    usage: /material < type of material > < amount of material >
+    aliases: item
+# Permissions
+permissions:
+  basics.*:
+    description: Gives access to everything (op)
+    children:
+      basics.player: true
+      basics.admin: false
+  basics.player:
+    description: The default permission for the plugin
+    default: not op
+  basics.admin:
+    description: Administrator permission
+    default: op
