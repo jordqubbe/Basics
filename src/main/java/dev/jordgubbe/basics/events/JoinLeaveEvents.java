@@ -1,21 +1,18 @@
 package dev.jordgubbe.basics.events;
 
 import dev.jordgubbe.basics.Basics;
-import dev.jordgubbe.basics.items.ItemManager;
 import dev.jordgubbe.basics.utils.Colorize;
+import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+@AllArgsConstructor
 public class JoinLeaveEvents implements Listener {
 
     private final Basics plugin;
-
-    public JoinLeaveEvents(Basics plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

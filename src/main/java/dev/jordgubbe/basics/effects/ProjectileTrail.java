@@ -1,9 +1,7 @@
 package dev.jordgubbe.basics.effects;
 
 import dev.jordgubbe.basics.Basics;
-import org.bukkit.Color;
-import org.bukkit.Effect;
-import org.bukkit.Location;
+import lombok.AllArgsConstructor;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -17,18 +15,17 @@ import org.bukkit.scheduler.BukkitTask;
 import java.util.HashMap;
 import java.util.Map;
 
+@AllArgsConstructor
 public class ProjectileTrail implements Listener {
 
     /**
+     *
      * @// TODO: 2/9/22 - Make a GUI to be able to set the trail
+     *
      */
 
-    private Map<Projectile, BukkitTask> tasks = new HashMap<>();
+    private final Map<Projectile, BukkitTask> tasks = new HashMap<>();
     private final Basics plugin;
-
-    public ProjectileTrail(Basics plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onProjectileLaunch(ProjectileLaunchEvent e) {

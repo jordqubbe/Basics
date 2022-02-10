@@ -1,6 +1,7 @@
 package dev.jordgubbe.basics.commands;
 
 import dev.jordgubbe.basics.utils.Colorize;
+import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -12,14 +13,11 @@ import org.bukkit.plugin.Plugin;
 import java.util.ArrayList;
 import java.util.UUID;
 
+@AllArgsConstructor
 public class Vanish implements CommandExecutor {
 
-    private ArrayList<UUID> vanished = new ArrayList<>();
+    private final ArrayList<UUID> vanished = new ArrayList<>();
     private final Plugin plugin;
-
-    public Vanish(Plugin plugin) {
-        this.plugin = plugin;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
