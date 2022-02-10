@@ -7,5 +7,4 @@
 /dataSources/
 /dataSources.local.xml
 
-/.gitignore
-/discord.xml
+.idea
