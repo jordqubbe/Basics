@@ -3,3 +3,6 @@ messages:
   on_disable: '&c&l[Basics] &r&cPlug-in disabled with no errors' # On Disable message
   join: '&ehas joined the game, welcome!' # Join message
   leave: '&ehas left the game, see you later!' # Leave message
+chat:
+  admin: ' &r&6» &r'
+  normal: ' &r&6» &r'

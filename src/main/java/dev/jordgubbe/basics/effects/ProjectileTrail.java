@@ -19,6 +19,10 @@ import java.util.Map;
 
 public class ProjectileTrail implements Listener {
 
+    /**
+     * @// TODO: 2/9/22 - Make a GUI to be able to set the trail
+     */
+
     private Map<Projectile, BukkitTask> tasks = new HashMap<>();
     private final Basics plugin;
 

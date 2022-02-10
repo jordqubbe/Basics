@@ -16,7 +16,7 @@ commands:
     aliases: cl
   material:
     description: An easier to use version of the vanilla /give command
-    usage: /material < type of material > < amount of material >
+    usage: /material | item  -[ type of material ]- -[ amount of material ]-
     aliases: item
   vanish:
     description: Used to vanish from other players
@@ -25,7 +25,7 @@ commands:
 # Permissions
 permissions:
   basics.*:
-    description: Gives access to everything (op)
+    description: Permission for players who are OP
     children:
       basics.player: true
       basics.admin: false
@@ -33,5 +33,5 @@ permissions:
     description: The default permission for the plugin
     default: not op
   basics.admin:
-    description: Administrator permission
+    description: Same as the basics.*, just wanted to make it's own node
     default: op

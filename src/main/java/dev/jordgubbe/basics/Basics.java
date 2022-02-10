@@ -30,7 +30,7 @@ public final class Basics extends JavaPlugin {
     }
 
     private void registerEvents() {
-        getServer().getPluginManager().registerEvents(new ChatManager(), this);
+        getServer().getPluginManager().registerEvents(new ChatManager(this), this);
         getServer().getPluginManager().registerEvents(new JoinLeaveEvents(this), this);
         getServer().getPluginManager().registerEvents(new ProjectileTrail(this), this);
         getServer().getPluginManager().registerEvents(new TripleShotBow(), this);
