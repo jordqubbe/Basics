@@ -32,7 +32,7 @@ public class GiveItem implements CommandExecutor {
                             player.sendMessage(ChatColor.RED + "That is not a valid material!");
                         }
                     } else {
-                        player.sendMessage(ChatColor.RED + "/material|item <material type> <amount>");
+                        player.sendMessage(ChatColor.RED + "/material|item [material type] [amount]");
                     }
                 }
             } else {
