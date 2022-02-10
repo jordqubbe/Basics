@@ -2,13 +2,14 @@ package dev.jordgubbe.basics.lib;
 
 import dev.dbassett.skullcreator.SkullCreator;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.ArrayList;
 
-public interface Item {
+public class Item {
 
     /**
      * @param name - Name of the new item
@@ -18,12 +19,19 @@ public interface Item {
      * @return - The newly created ItemStack
      */
 
-    default ItemStack createItem(String name, Material mat, int amount, ArrayList<String> lore) {
+    public static ItemStack createItem(String name, Material mat, int amount, ArrayList<String> lore) {
         ItemStack item = new ItemStack(mat, amount);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(name);
         meta.setLore(lore);
+        item.setItemMeta(meta);
         return item;
+    }
+
+    public static void addEnchant(ItemStack item, Enchantment enchantment, int enchantLevel) {
+        ItemMeta meta = item.getItemMeta();
+        meta.addEnchant(enchantment, enchantLevel, true);
+        item.setItemMeta(meta);
     }
 
     /**
@@ -34,11 +42,12 @@ public interface Item {
      * @return - The newly created Skull ItemStack
      */
 
-   default ItemStack createSkull(String name, ArrayList<String> lore, String url) {
+   public static ItemStack createSkull(String name, ArrayList<String> lore, String url) {
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) item.getItemMeta();
         meta.setDisplayName(name);
         meta.setLore(lore);
+        item.setItemMeta(meta);
         return SkullCreator.itemWithUrl(item, url);
     }
 

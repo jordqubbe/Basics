@@ -1,5 +1,6 @@
 package dev.jordgubbe.basics.items;
 
+import dev.jordgubbe.basics.lib.Item;
 import dev.jordgubbe.basics.utils.Colorize;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -23,12 +24,13 @@ public class ItemManager {
         createTeleportBowItem();
     }
 
+
+
     public static void createTripleShotBowItem() {
-        tripleShotBow = new ItemStack(Material.BOW);
-        ItemMeta meta = tripleShotBow.getItemMeta();
-        meta.setDisplayName(Colorize.translate("&6Triple Shot Bow"));
-        meta.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
-        tripleShotBow.setItemMeta(meta);
+        ArrayList<String> lore = new ArrayList<>();
+        lore.add("yes");
+        tripleShotBow = Item.createItem(Colorize.format("&6Triple Shot Bow"), Material.BOW, 1, lore);
+        Item.addEnchant(tripleShotBow, Enchantment.ARROW_INFINITE, 1);
     }
 
     public static void createTeleportBowItem() {
