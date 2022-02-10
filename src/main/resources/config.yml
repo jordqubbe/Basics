@@ -1,0 +1,5 @@
+messages:
+  on_enable: '&a&l[Basics] &r&aPlug-in enabled with no errors'  # On Enable message
+  on_disable: '&c&l[Basics] &r&cPlug-in disabled with no errors' # On Disable message
+  join: '&ehas joined the game, welcome!' # Join message
+  leave: '&ehas left the game, see you later!' # Leave message

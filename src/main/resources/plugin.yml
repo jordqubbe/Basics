@@ -4,8 +4,12 @@ main: dev.jordgubbe.basics.Basics
 api-version: 1.18
 authors: [ jordgubbe ]
 description: A worse version of essentials
+
 # Commands
 commands:
+  basics:
+    description: The core command of this plugin
+    usage: /basics
   clearlag:
     description: Deletes floating items on the ground that cause lag
     usage: /clearlag
@@ -14,6 +18,10 @@ commands:
     description: An easier to use version of the vanilla /give command
     usage: /material < type of material > < amount of material >
     aliases: item
+  vanish:
+    description: Used to vanish from other players
+    usage: /vanish
+
 # Permissions
 permissions:
   basics.*:

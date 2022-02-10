@@ -1,6 +1,8 @@
 package dev.jordgubbe.basics.events;
 
-import org.bukkit.ChatColor;
+import dev.jordgubbe.basics.Basics;
+import dev.jordgubbe.basics.items.ItemManager;
+import dev.jordgubbe.basics.utils.Colorize;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,15 +11,21 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class JoinLeaveEvents implements Listener {
 
+    private final Basics plugin;
+
+    public JoinLeaveEvents(Basics plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        event.setJoinMessage(ChatColor.GREEN + player.getName() + ChatColor.YELLOW + " joined the game.");
+        event.setJoinMessage(Colorize.format("&a" + player.getName() + " " + plugin.getConfig().getString("messages.join")));
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.setQuitMessage(ChatColor.RED + player.getName() + ChatColor.YELLOW + " left the game.");
+        event.setQuitMessage(Colorize.format("&a" + player.getName() + " " + plugin.getConfig().getString("messages.leave")));
     }
 }

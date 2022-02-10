@@ -1,5 +1,6 @@
 package dev.jordgubbe.basics.commands;
 
+import dev.jordgubbe.basics.utils.Colorize;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -26,8 +27,7 @@ public class GiveItem implements CommandExecutor {
                             for (int i = 0; i < amount; i++) {
                                 player.getInventory().addItem(new ItemStack(material));
                             }
-                            player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                                    "&eAdded: &a" + amount + " " + args[0].toUpperCase().replace("_", " ") + "(S)"));
+                            player.sendMessage(Colorize.format("&eAdded: &a" + amount + " " + args[0].toUpperCase().replace("_", " ") + "(S)"));
                         } catch (IllegalArgumentException exception) {
                             player.sendMessage(ChatColor.RED + "That is not a valid material!");
                         }
