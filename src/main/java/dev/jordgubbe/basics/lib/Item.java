@@ -2,12 +2,14 @@ package dev.jordgubbe.basics.lib;
 
 import dev.dbassett.skullcreator.SkullCreator;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
@@ -47,6 +49,18 @@ public class Item {
         meta.setLore(lore);
         item.setItemMeta(meta);
         return SkullCreator.itemWithUrl(item, url);
+    }
+
+    /**
+     * Slightly faster way to add a new recipe
+     * @param item - Item you want to add the recipe to
+     * @param key - NamespacedKey#minecraft()
+     * @return - The recipe
+     */
+    public static ShapedRecipe addRecipe(ItemStack item, String key, String top, String middle, String bottom) {
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(key), item);
+        recipe.shape(top, middle, bottom);
+        return recipe;
     }
 
     /**
