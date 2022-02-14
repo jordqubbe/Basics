@@ -27,4 +27,5 @@ public class RecipeManager {
         tripleShotBowRecipe.setIngredient('D', Material.DIAMOND);
         return tripleShotBowRecipe;
     }
+
 }

@@ -34,7 +34,7 @@ public class Colorize {
         return ChatColor.translateAlternateColorCodes('&', hexColored);
     }
 
-    public static TextComponent translateColorCodesToTextComponent(String text) {
+    public static TextComponent translateToTextComponent(String text) {
         String colored = translate(text);
         TextComponent base = new TextComponent();
         BaseComponent[] converted = TextComponent.fromLegacyText(colored);

@@ -1,7 +1,10 @@
 package dev.jordgubbe.basics.commands;
 
+import dev.jordgubbe.basics.Basics;
 import dev.jordgubbe.basics.utils.Colorize;
+import lombok.AllArgsConstructor;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,12 +12,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+@AllArgsConstructor
 public class GiveItem implements CommandExecutor {
+
+    private final Basics plugin;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "You must be a player to do this!");
+            sender.sendMessage(Colorize.format(plugin.getConfig().getString("messages.commands.player_only")));
             return true;
         } else {
             Player player = (Player) sender;
@@ -36,7 +42,7 @@ public class GiveItem implements CommandExecutor {
                     }
                 }
             } else {
-                player.sendMessage(ChatColor.RED + "You do not have the permission to run this command!");
+                player.sendMessage(Colorize.format(plugin.getConfig().getString("messages.commands.no_permission")));
             }
         }
         return true;

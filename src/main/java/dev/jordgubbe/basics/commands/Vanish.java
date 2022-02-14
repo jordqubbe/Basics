@@ -22,7 +22,7 @@ public class Vanish implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "You must be a player to do this!");
+            sender.sendMessage(Colorize.format(plugin.getConfig().getString("messages.commands.player_only")));
             return true;
         } else {
             Player player = (Player) sender;
@@ -43,7 +43,7 @@ public class Vanish implements CommandExecutor {
                     }
                 }
             } else {
-                player.sendMessage(Colorize.format("&cYou do not have the required permission to preform this!"));
+                player.sendMessage(Colorize.format(plugin.getConfig().getString("messages.commands.no_permission")));
             }
         }
         return true;

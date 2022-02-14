@@ -1,8 +1,16 @@
 messages:
-  on_enable: '&a&l[Basics] &r&aPlug-in enabled with no errors'  # On Enable message
-  on_disable: '&c&l[Basics] &r&cPlug-in disabled with no errors' # On Disable message
-  join: '&ehas joined the game, welcome!' # Join message
-  leave: '&ehas left the game, see you later!' # Leave message
+  commands:
+    no_permission: '&cYou do not have permission to do this!'
+    player_only: '&cYou must be a player to do this!'
+  vanish:
+    vanish_on: '&aNow visible to other players!'
+    vanish_off: '&cNo longer visible to other players!'
+
+  on_enable: '&a&l[Basics] &r&aPlug-in enabled with no errors'
+  on_disable: '&c&l[Basics] &r&cPlug-in disabled with no errors'
+  join: '&ehas joined the game, welcome!'
+  leave: '&ehas left the game, see you later!'
+
 chat:
   admin: ' &r&6» &r'
   normal: ' &r&6» &r'

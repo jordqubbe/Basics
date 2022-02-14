@@ -14,6 +14,8 @@ import dev.jordgubbe.basics.items.listeners.TripleShotBow;
 import dev.jordgubbe.basics.utils.Colorize;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class Basics extends JavaPlugin {
 
     @Override
@@ -40,10 +42,10 @@ public final class Basics extends JavaPlugin {
     }
 
     private void registerCommands() {
-        getCommand("clearlag").setExecutor(new ClearLag());
-        getCommand("material").setExecutor(new GiveItem());
-        getCommand("vanish").setExecutor(new Vanish(this));
-        getCommand("basics").setExecutor(new BasicsCommand());
+        Objects.requireNonNull(getCommand("clearlag")).setExecutor(new ClearLag(this));
+        Objects.requireNonNull(getCommand("material")).setExecutor(new GiveItem(this));
+        Objects.requireNonNull(getCommand("vanish")).setExecutor(new Vanish(this));
+        Objects.requireNonNull(getCommand("basics")).setExecutor(new BasicsCommand(this));
     }
 
     @Override

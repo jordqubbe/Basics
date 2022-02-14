@@ -2,6 +2,7 @@ package dev.jordgubbe.basics.effects;
 
 import dev.jordgubbe.basics.Basics;
 import lombok.AllArgsConstructor;
+import org.bukkit.Color;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -33,9 +34,9 @@ public class ProjectileTrail implements Listener {
             tasks.put(e.getEntity(), new BukkitRunnable() {
                 @Override
                 public void run() {
-                    player.spawnParticle(Particle.ASH, e.getLocation(), 10);
+                    player.spawnParticle(Particle.ASH, e.getLocation(), 15);
                 }
-            }.runTaskTimerAsynchronously(plugin, 1L, 1L));
+            }.runTaskTimerAsynchronously(plugin, 0L, 1L));
         }
     }
 

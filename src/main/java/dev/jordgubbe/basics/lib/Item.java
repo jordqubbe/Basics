@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Item {
@@ -29,6 +30,7 @@ public class Item {
     public static ItemStack createItem(String name, Material mat, int amount, List<String> lore) {
         ItemStack item = new ItemStack(mat, amount);
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.setDisplayName(name);
         meta.setLore(lore);
         item.setItemMeta(meta);
@@ -45,10 +47,24 @@ public class Item {
     public static ItemStack createSkull(String name, List<String> lore, String url) {
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) item.getItemMeta();
+        assert meta != null;
         meta.setDisplayName(name);
         meta.setLore(lore);
         item.setItemMeta(meta);
         return SkullCreator.itemWithUrl(item, url);
+    }
+
+    /**
+     * Set lore of an item
+     * @param item - Item you want to set the lore too
+     * @param lore - Lore you want to add to an item
+     */
+    public static void setLore(ItemStack item, List<String> lore) {
+        ItemMeta meta = item.getItemMeta();
+        assert meta != null;
+        Objects.requireNonNull(meta.getLore()).clear();
+        meta.setLore(lore);
+        item.setItemMeta(meta);
     }
 
     /**
@@ -71,6 +87,7 @@ public class Item {
      */
     public static void addEnchant(ItemStack item, Enchantment enchantment, int enchantLevel) {
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.addEnchant(enchantment, enchantLevel, true);
         item.setItemMeta(meta);
     }
@@ -82,6 +99,7 @@ public class Item {
      */
     public static void addItemFlags(ItemStack item, ItemFlag flag) {
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.addItemFlags(flag);
         item.setItemMeta(meta);
     }
@@ -98,6 +116,7 @@ public class Item {
     public static void addAttributeModifier(ItemStack item, Attribute attribute, String key, int level, AttributeModifier.Operation operation, EquipmentSlot slot) {
         AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), key, level, operation, slot);
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.addAttributeModifier(attribute, modifier);
     }
 
