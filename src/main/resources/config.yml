@@ -5,6 +5,9 @@ messages:
   vanish:
     vanish_on: '&aNow visible to other players!'
     vanish_off: '&cNo longer visible to other players!'
+  stack_trace:
+    null: '&c&lERROR! &r&cPlease check your syntax and try again!'
+    args: '&cIncorrect usage of the command!'
 
   on_enable: '&a&l[Basics] &r&aPlug-in enabled with no errors'
   on_disable: '&c&l[Basics] &r&cPlug-in disabled with no errors'

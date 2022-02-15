@@ -19,11 +19,10 @@ public class ClearLag implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player player)) {
             sender.sendMessage(Colorize.format(plugin.getConfig().getString("messages.commands.player_only")));
             return true;
         } else {
-            Player player = (Player) sender;
             if (command.getName().equalsIgnoreCase("clearlag")) {
                 if (player.hasPermission("basics.admin")) {
                     for (Entity entity : player.getWorld().getEntities()) {

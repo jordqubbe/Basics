@@ -62,7 +62,21 @@ public class Item {
     public static void setLore(ItemStack item, List<String> lore) {
         ItemMeta meta = item.getItemMeta();
         assert meta != null;
-        Objects.requireNonNull(meta.getLore()).clear();
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+    }
+
+    /**
+     * Set's the given line of an Item's lore
+     * @param item - Which item's lore you would like to change
+     * @param whichLine - Which line the lore is on
+     * @param lineText - What the new lore is
+     */
+    public static void setLoreLine(ItemStack item, int whichLine, String lineText) {
+        ItemMeta meta = item.getItemMeta();
+        assert meta != null;
+        List<String> lore = meta.getLore();
+        lore.set(whichLine, lineText);
         meta.setLore(lore);
         item.setItemMeta(meta);
     }

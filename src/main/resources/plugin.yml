@@ -21,6 +21,12 @@ commands:
   vanish:
     description: Used to vanish from other players
     usage: /vanish
+  lore:
+    description: test
+    usage: /lore
+  enchant:
+    description: Enchant
+    usage: /enchant
 
 # Permissions
 permissions:

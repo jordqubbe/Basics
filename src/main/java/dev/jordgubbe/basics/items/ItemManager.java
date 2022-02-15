@@ -32,7 +32,7 @@ public class ItemManager {
 
     public static void createTeleportBowItem() {
         List<String> lore = new ArrayList<>();
-        lore.add(Colorize.format("&6Item Ability: Ender Warp &e&lLEFT-CLICK"));
+        lore.add(Colorize.format("&6Item Ability: Ender Warp &e&lSNEAK + LEFT-CLICK"));
         lore.add(ChatColor.GRAY + "Use the item's ability to launch an Ender Pearl");
         lore.add(ChatColor.GRAY + "just like you're throwing one");
         teleportBow = Item.createItem(Colorize.format("&6Teleport Bow"), Material.BOW, 1, lore);

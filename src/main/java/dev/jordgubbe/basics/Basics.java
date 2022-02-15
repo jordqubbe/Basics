@@ -1,9 +1,6 @@
 package dev.jordgubbe.basics;
 
-import dev.jordgubbe.basics.commands.BasicsCommand;
-import dev.jordgubbe.basics.commands.ClearLag;
-import dev.jordgubbe.basics.commands.GiveItem;
-import dev.jordgubbe.basics.commands.Vanish;
+import dev.jordgubbe.basics.commands.*;
 import dev.jordgubbe.basics.effects.ProjectileTrail;
 import dev.jordgubbe.basics.events.ChatManager;
 import dev.jordgubbe.basics.events.JoinLeaveEvents;
@@ -46,6 +43,8 @@ public final class Basics extends JavaPlugin {
         Objects.requireNonNull(getCommand("material")).setExecutor(new GiveItem(this));
         Objects.requireNonNull(getCommand("vanish")).setExecutor(new Vanish(this));
         Objects.requireNonNull(getCommand("basics")).setExecutor(new BasicsCommand(this));
+        Objects.requireNonNull(getCommand("lore")).setExecutor(new LoreCommand(this));
+        Objects.requireNonNull(getCommand("enchant")).setExecutor(new EnchantCommand(this));
     }
 
     @Override
