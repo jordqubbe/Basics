@@ -1,7 +1,6 @@
 package dev.jordgubbe.basics.items.listeners;
 
 import dev.jordgubbe.basics.items.ItemManager;
-import dev.jordgubbe.basics.lib.Item;
 import org.bukkit.Sound;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;

@@ -55,26 +55,26 @@
     </build>
 
     <repositories>
+        <!-- Spigot -->
         <repository>
-            <!-- Spigot -->
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <!-- Lombok -->
         <repository>
-            <!-- Lombok -->
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <!-- SkullCreator -->
         <repository>
-            <!-- SkullCreator -->
             <id>skullcreator-repo</id>
             <url>https://github.com/deanveloper/SkullCreator/raw/mvn-repo/</url>
         </repository>
     </repositories>
 
     <dependencies>
+        <!-- Spigot -->
         <dependency>
-            <!-- Spigot -->
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>

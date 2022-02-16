@@ -4,8 +4,10 @@ import dev.jordgubbe.basics.commands.*;
 import dev.jordgubbe.basics.effects.ProjectileTrail;
 import dev.jordgubbe.basics.events.ChatManager;
 import dev.jordgubbe.basics.events.JoinLeaveEvents;
+import dev.jordgubbe.basics.items.ItemDropManager;
 import dev.jordgubbe.basics.items.ItemManager;
 import dev.jordgubbe.basics.items.RecipeManager;
+import dev.jordgubbe.basics.items.listeners.ItemDropListener;
 import dev.jordgubbe.basics.items.listeners.TeleportBow;
 import dev.jordgubbe.basics.items.listeners.TripleShotBow;
 import dev.jordgubbe.basics.utils.Colorize;
@@ -23,6 +25,7 @@ public final class Basics extends JavaPlugin {
         configMethods();
         ItemManager.init();
         RecipeManager.init();
+        ItemDropManager.init();
     }
 
     public void configMethods() {
@@ -36,6 +39,7 @@ public final class Basics extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ProjectileTrail(this), this);
         getServer().getPluginManager().registerEvents(new TripleShotBow(), this);
         getServer().getPluginManager().registerEvents(new TeleportBow(), this);
+        getServer().getPluginManager().registerEvents(new ItemDropListener(), this);
     }
 
     private void registerCommands() {

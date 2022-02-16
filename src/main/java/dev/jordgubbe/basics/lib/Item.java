@@ -132,6 +132,7 @@ public class Item {
         ItemMeta meta = item.getItemMeta();
         assert meta != null;
         meta.addAttributeModifier(attribute, modifier);
+        item.setItemMeta(meta);
     }
 
 }
